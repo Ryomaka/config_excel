@@ -1,0 +1,50 @@
+.App{
+   padding: 5rem;
+   background-color: aliceblue;
+   color: rgb(17, 1, 1);
+   
+}
+
+
+.input-file{
+
+    background-color: rgb(85, 184, 119);
+    box-shadow: 0 4px 15px rgba(14, 13, 13, 0.3);
+    padding: 1rem;
+    color: rgb(24, 23, 23);
+    
+}
+
+
+.save{
+  height: 30px;
+  width: 100px;
+  margin: 10px;
+  color: rgb(22, 20, 20);
+  box-shadow: 0 4px 15px rgba(14, 13, 13, 0.3);
+  border-radius: 10px;
+  border: none; 
+   
+}
+
+input{
+float: auto;
+ background-color: rgb(176, 218, 218);
+ box-shadow: 0 4px 15px rgba(14, 13, 13, 0.3);
+ border-radius: 10px;
+ border: none; 
+}
+
+.logout{
+  height: 30px;
+  width: 90px;
+  margin: 10px;
+  color: white;
+  background-color: rgb(123, 117, 243);
+  border-radius: 10px;
+  border: none; 
+}
+
+.logout:hover{
+  background: rgb(175, 171, 240);
+}
