@@ -57,7 +57,7 @@ function App({login}) {
   // JSX code for login form
   const renderForm = (
     <div className="app">
-        <h1>Login555</h1>
+        <h1>Login</h1>
         <div className="login-form">
     <div className="form">
         
