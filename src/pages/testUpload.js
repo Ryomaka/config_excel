@@ -15,7 +15,7 @@ const UploadPage = (data) => {
 
    
     if(dataSet ){
-      axios.post('http://localhost:80/after_edit', {name:data.data.name, time: data.data.time, sort_key: data.data.sort_key})
+      axios.post('https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/after_edit', {name:data.data.name, time: data.data.time, sort_key: data.data.sort_key})
      .then((response)=> setInitialData(response.data)).catch((err)=>console.log(err)).then(setDataSet(false))
 
     }
@@ -47,9 +47,9 @@ const UploadPage = (data) => {
   let fromdata = new FormData()
   fromdata.append('file', fileData)
   fromdata.append('name',  JSON.stringify(arayName)) 
-  await axios.post('http://localhost:80/edit', fromdata )
+  await axios.post('https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/edit', fromdata )
   // .then(()=>{axios.post('http://localhost:80/delete_item', {sort_key:data.data.sort_key})})
-  .then(()=>{axios.post('http://localhost:80/status', {name:fileName, sort_key:sort_key, time:time})})
+  .then(()=>{axios.post('https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/status', {name:fileName, sort_key:sort_key, time:time})})
   // .then(()=>data.data.handleRefresh)
   .then(data.data.back)
   

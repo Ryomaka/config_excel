@@ -23,7 +23,7 @@ function Approve({logout}) {
   const [cilckButton, setcilckButton] = useState('Editor') 
     
   if(dataBase2){
-     axios.get(`http://localhost:80/show_item`,{crossdomain:true})
+     axios.get(`https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/show_item`,{crossdomain:true})
     .then((response)=>{
       // console.log(response)
       if(response.data.Items.length > 0){
@@ -41,7 +41,7 @@ function Approve({logout}) {
 
     const deleteItem = (sort_key) => {
       
-      axios.post('http://localhost:80/delete_item', {sort_key: sort_key})
+      axios.post('https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/delete_item', {sort_key: sort_key})
       // .then((response)=>{console.log(response)})
       .then(()=>{ setDatabase(dataBase.filter(item => item.sort_key !== sort_key))})
       .then(()=> setDeleteI(true) )
@@ -79,10 +79,10 @@ function Approve({logout}) {
   }
 
      const handleConfirm = (sort_key, name, time, status)=>{
-      axios.post(`http://localhost:80/upload`,{sort_key:sort_key, name:name, time:time})
+      axios.post(`https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/upload`,{sort_key:sort_key, name:name, time:time})
       .then(async()=>{
-        axios.post(`http://localhost:80/config`,{name:name, time:time, sort_key:sort_key, status:status})
-        await axios.post(`http://localhost:80/delete_item`,{sort_key:sort_key})
+        axios.post(`https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/config`,{name:name, time:time, sort_key:sort_key, status:status})
+        await axios.post(`https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/delete_item`,{sort_key:sort_key})
       })
       // .then(()=>{ axios.post(`http://localhost:80/delete_item`,{sort_key:sort_key})})
        .then(()=>{

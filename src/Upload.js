@@ -94,7 +94,7 @@ const ts = new Date()
   let fromdata = new FormData()
   fromdata.append('file', fileData)
   fromdata.append('name', nameFile )
-   await axios.post('http://localhost:80/input_item', fromdata   )
+   await axios.post('https://fkghv2ohm5.execute-api.ap-southeast-1.amazonaws.com/dev/dynamodb/input_item', fromdata   )
    .then(()=>setShow(false)).then(()=>setSavefile(true))
   
   } catch (error) {
